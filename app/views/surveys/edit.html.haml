@@ -1,0 +1,21 @@
+%h2 Edit #{@survey.title}
+
+= form_tag survey_path(@survey), :method => :put do
+
+  %table#editsurvey
+    
+    %tbody
+      %tr
+        %td= label :survey, :title, 'Title'
+        %td= text_field :survey, :title
+               
+
+      %tr
+        %td   
+          -#%button#addquestion{:onclick => "addquestion()", :type => "button"} Add Question
+        %td= submit_tag 'Update'
+        
+%br
+= link_to  'Back to Home Page', surveys_path
+  
+

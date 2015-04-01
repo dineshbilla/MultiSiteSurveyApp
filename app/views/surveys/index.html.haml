@@ -1,0 +1,16 @@
+-#  Home page for MultiSiteSurveyApp
+%h2 Welcome to the Survey Builder
+%p= link_to 'Create a new Survey',new_survey_path
+%h3 List of Surveys
+%table#surveys
+  %thead
+    %tr
+      %th Title
+      %th 
+      %th 
+  %tbody
+    - @surveys.each do |survey|
+      %tr
+        %td= link_to survey.title, survey_questions_path(survey)
+        %td= link_to "Edit", edit_survey_path(survey)
+        %td= link_to "Delete",survey_path(survey), :method => :delete

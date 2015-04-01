@@ -1,0 +1,5 @@
+MultiSiteSurveyApp::Application.routes.draw do
+  resources :surveys do
+    resources :questions
+  root :to => redirect('/surveys')
+end

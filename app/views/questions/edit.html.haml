@@ -1,0 +1,22 @@
+%h2 Edit Question in '#{@survey.title}'
+
+= form_tag survey_question_path(@survey,@question), :method => :put do
+
+  %table#editquestion
+    
+    %tbody
+      %tr
+        %td= label :question, :question_text, 'Enter Question'
+        %td= text_field :question, :question_text
+      %tr
+        %td= label :question, :question_type, 'Question Type'   
+        %td= select :question, :question_type,['Text','CheckBox', 'Radio']
+      %tr
+        %td= label :question, :answer_options, 'Answer Options'   
+        %td= text_area :question, :answer_options,rows: 5
+      %tr
+        %td   
+        %td= submit_tag 'Update'
+        
+%br
+= link_to  'Back to Survey', survey_questions_path

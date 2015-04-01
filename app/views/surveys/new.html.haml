@@ -1,0 +1,21 @@
+%h2 Create New Survey
+
+= form_tag surveys_path, :method => :post do
+
+  %table#newsurvey
+    
+    %tbody
+      %tr
+        %td= label :survey, :title, 'Title'
+        %td= text_field :survey, :title
+               
+
+      %tr
+        %td   
+          -#%button#addquestion{:onclick => "addquestion()", :type => "button"} Add Question
+        %td= submit_tag 'Save Changes'
+        
+%br
+= link_to  'Back to Home Page', surveys_path
+  
+
